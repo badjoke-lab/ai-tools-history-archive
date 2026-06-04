@@ -1,0 +1,62 @@
+[
+  {
+    "value": "active",
+    "label": "Active",
+    "side": "active",
+    "description": "The tracked entity is currently available in its normal public form."
+  },
+  {
+    "value": "active_changed",
+    "label": "Active / Changed",
+    "side": "active",
+    "description": "The tracked entity remains available but has materially changed."
+  },
+  {
+    "value": "shutdown",
+    "label": "Shutdown",
+    "side": "ended",
+    "description": "The tracked entity is no longer available as a public product or service."
+  },
+  {
+    "value": "shutdown_announced",
+    "label": "Shutdown Announced",
+    "side": "ended",
+    "description": "A shutdown has been announced but the effective date may be in the future."
+  },
+  {
+    "value": "acquired",
+    "label": "Acquired",
+    "side": "ended",
+    "description": "The tracked entity or its operator was acquired."
+  },
+  {
+    "value": "merged",
+    "label": "Merged",
+    "side": "ended",
+    "description": "The tracked entity was merged into another product, service, or brand."
+  },
+  {
+    "value": "rebranded",
+    "label": "Rebranded",
+    "side": "ended",
+    "description": "The tracked entity moved to a new name or brand."
+  },
+  {
+    "value": "deprecated",
+    "label": "Deprecated",
+    "side": "ended",
+    "description": "The tracked entity has been marked for replacement or retirement."
+  },
+  {
+    "value": "retired",
+    "label": "Retired",
+    "side": "ended",
+    "description": "The tracked entity has been retired or removed after a lifecycle transition."
+  },
+  {
+    "value": "unknown",
+    "label": "Unknown",
+    "side": "unknown",
+    "description": "The current state cannot be determined from available public evidence."
+  }
+]
