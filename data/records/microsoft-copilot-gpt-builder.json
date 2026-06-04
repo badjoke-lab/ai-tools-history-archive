@@ -1,0 +1,43 @@
+{
+  "id": "atha_000003",
+  "slug": "microsoft-copilot-gpt-builder",
+  "name": "Microsoft Copilot GPT Builder",
+  "aliases": ["Copilot GPT Builder"],
+  "entity_type": "feature",
+  "category": ["chat_assistant", "agent_automation"],
+  "operator": "Microsoft",
+  "country": "United States",
+  "status": "retired",
+  "current_state": "Microsoft support documentation states that GPT Builder has been retired.",
+  "launched_at": null,
+  "ended_at": "2024-07-14",
+  "last_known_url": "https://support.microsoft.com/en-us/microsoft-copilot/gpt-builder-has-been-retired",
+  "current_url_status": "live_verified",
+  "summary": "Copilot GPT Builder was a Copilot Pro feature for creating custom GPTs. Microsoft later retired the feature.",
+  "confidence": "high",
+  "related_records": [],
+  "last_reviewed_at": "2026-06-04",
+  "events": [
+    {
+      "id": "event_000003",
+      "date": "2024-07-14",
+      "type": "feature_removed",
+      "title": "Copilot GPT Builder retired",
+      "description": "Microsoft support documentation states that GPT Builder has been retired.",
+      "evidence_ids": ["evidence_000003"],
+      "confidence": "high"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence_000003",
+      "title": "GPT Builder has been retired",
+      "url": "https://support.microsoft.com/en-us/microsoft-copilot/gpt-builder-has-been-retired",
+      "archived_url": "",
+      "source_type": "official_support",
+      "accessed_at": "2026-06-04",
+      "supports": ["feature_removed", "retired", "current_state"],
+      "reliability": "high"
+    }
+  ]
+}
