@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+.next/
+out/
+dist/
+coverage/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Private / internal notes
+private/
+internal/
+.local-notes/
+notes-private/
+*.local.md
+*.private.md
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
