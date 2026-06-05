@@ -6,25 +6,30 @@ AI Tools History Archive
 
 ## Current Phase
 
-PR-001: public-safe foundation and specifications.
+PR-002: data schema enums and initial seed records.
 
-## Completed in This Phase
+## Completed
 
-- Repository initialized
-- Static-friendly Next.js setup added
-- White-background UI baseline added
-- Public documentation structure added
-- Product specification added
-- Data model added
-- Content policy added
-- Source and evidence policy added
-- UI guidelines added
-- Public roadmap added
-- Internal/private file patterns added to `.gitignore`
+- PR-001 merged.
+- Repository initialized.
+- Static-friendly Next.js setup added.
+- White-background UI baseline added.
+- Public documentation structure added.
+- Data directory notes added.
+- Public enum files added for statuses, entity types, categories, event types, source types, confidence, and reliability.
+- Initial JSON schema file added for record shape.
+- Initial reviewed seed records added.
+
+## Initial Seed Records in PR-002
+
+- Bard
+- OpenAI AI Text Classifier
+- Microsoft Copilot GPT Builder
+- OpenAI text-davinci-003
 
 ## Not Yet Implemented
 
-- Record data files
+- Record data loading in the app
 - Record list page
 - Record detail page
 - Search and filtering
@@ -33,16 +38,18 @@ PR-001: public-safe foundation and specifications.
 - Stats page
 - Methodology page
 - Submit/correction page
-- Seed records
+- Automated validation script
 
 ## Next PR
 
-PR-002 should add:
+PR-003 should add:
 
-- Initial data schema files
-- Public enums for statuses, categories, entity types, event types, source types, reliability, and confidence
-- Initial reviewed seed records
-- Basic validation or data-loading helpers if appropriate
+- Data loading helpers
+- `/records/` list page
+- `/records/[slug]/` detail page
+- Basic status and confidence display
+- Event timeline display
+- Evidence list display
 
 ## Public-Safety Notes
 
