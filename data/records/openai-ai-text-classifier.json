@@ -1,0 +1,43 @@
+{
+  "id": "atha_000002",
+  "slug": "openai-ai-text-classifier",
+  "name": "OpenAI AI Text Classifier",
+  "aliases": ["AI Text Classifier"],
+  "entity_type": "feature",
+  "category": ["research", "writing_productivity"],
+  "operator": "OpenAI",
+  "country": "United States",
+  "status": "retired",
+  "current_state": "OpenAI stated that the AI Text Classifier was no longer available due to its low rate of accuracy.",
+  "launched_at": "2023-01-31",
+  "ended_at": "2023-07-20",
+  "last_known_url": "https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/",
+  "current_url_status": "live_verified",
+  "summary": "OpenAI's AI Text Classifier was a classifier intended to indicate AI-written text. OpenAI later marked it as no longer available.",
+  "confidence": "high",
+  "related_records": [],
+  "last_reviewed_at": "2026-06-04",
+  "events": [
+    {
+      "id": "event_000002",
+      "date": "2023-07-20",
+      "type": "model_retired",
+      "title": "AI Text Classifier marked no longer available",
+      "description": "OpenAI updated the classifier page to state that the AI Text Classifier was no longer available due to its low rate of accuracy.",
+      "evidence_ids": ["evidence_000002"],
+      "confidence": "high"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence_000002",
+      "title": "New AI classifier for indicating AI-written text",
+      "url": "https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/",
+      "archived_url": "",
+      "source_type": "official_blog",
+      "accessed_at": "2026-06-04",
+      "supports": ["retired", "current_state"],
+      "reliability": "high"
+    }
+  ]
+}

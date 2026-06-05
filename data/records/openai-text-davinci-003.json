@@ -1,0 +1,43 @@
+{
+  "id": "atha_000004",
+  "slug": "openai-text-davinci-003",
+  "name": "OpenAI text-davinci-003",
+  "aliases": ["text-davinci-003"],
+  "entity_type": "model",
+  "category": ["api_model_infra", "writing_productivity"],
+  "operator": "OpenAI",
+  "country": "United States",
+  "status": "retired",
+  "current_state": "The model appears in OpenAI API deprecation documentation as a retired model with a listed shutdown date.",
+  "launched_at": null,
+  "ended_at": "2024-01-04",
+  "last_known_url": "https://developers.openai.com/api/docs/deprecations",
+  "current_url_status": "live_verified",
+  "summary": "text-davinci-003 was an OpenAI completion model later listed in OpenAI API deprecation documentation with a shutdown date.",
+  "confidence": "high",
+  "related_records": [],
+  "last_reviewed_at": "2026-06-04",
+  "events": [
+    {
+      "id": "event_000004",
+      "date": "2024-01-04",
+      "type": "model_retired",
+      "title": "text-davinci-003 shutdown date listed",
+      "description": "OpenAI API deprecation documentation lists text-davinci-003 with a shutdown date.",
+      "evidence_ids": ["evidence_000004"],
+      "confidence": "high"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence_000004",
+      "title": "OpenAI API deprecations",
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "archived_url": "",
+      "source_type": "official_docs",
+      "accessed_at": "2026-06-04",
+      "supports": ["model_retired", "current_state"],
+      "reliability": "high"
+    }
+  ]
+}

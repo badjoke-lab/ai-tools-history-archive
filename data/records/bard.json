@@ -1,0 +1,43 @@
+{
+  "id": "atha_000001",
+  "slug": "bard",
+  "name": "Bard",
+  "aliases": ["Google Bard"],
+  "entity_type": "product",
+  "category": ["chat_assistant"],
+  "operator": "Google",
+  "country": "United States",
+  "status": "rebranded",
+  "current_state": "Bard was renamed Gemini as part of Google's broader Gemini product transition.",
+  "launched_at": "2023-02",
+  "ended_at": "2024-02-08",
+  "last_known_url": "https://bard.google.com/",
+  "current_url_status": "redirected_or_replaced",
+  "summary": "Bard was Google's AI chatbot product name before the Gemini rebrand.",
+  "confidence": "high",
+  "related_records": [],
+  "last_reviewed_at": "2026-06-04",
+  "events": [
+    {
+      "id": "event_000001",
+      "date": "2024-02-08",
+      "type": "rebrand",
+      "title": "Bard became Gemini",
+      "description": "Google announced that Bard would now be called Gemini.",
+      "evidence_ids": ["evidence_000001"],
+      "confidence": "high"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence_000001",
+      "title": "Google announcement introducing Gemini Advanced and the Gemini app",
+      "url": "https://blog.google/products/gemini/bard-gemini-advanced-app/",
+      "archived_url": "",
+      "source_type": "official_blog",
+      "accessed_at": "2026-06-04",
+      "supports": ["rebrand", "current_state"],
+      "reliability": "high"
+    }
+  ]
+}
