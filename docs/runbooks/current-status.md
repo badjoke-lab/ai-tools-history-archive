@@ -6,9 +6,9 @@ AI Tools History Archive
 
 ## Current Phase
 
-PR-001: public-safe foundation and specifications.
+PR-002: data schema and initial seed records.
 
-## Completed in This Phase
+## Completed in Previous Phase
 
 - Repository initialized
 - Static-friendly Next.js setup added
@@ -22,27 +22,43 @@ PR-001: public-safe foundation and specifications.
 - Public roadmap added
 - Internal/private file patterns added to `.gitignore`
 
+## Completed in This Phase
+
+- Public enum definitions added
+- TypeScript data schema added
+- Initial reviewed seed records added
+- Basic record data loading helpers added
+- Basic records index page added
+- Basic record detail page added
+
+## Initial Seed Records
+
+- Bard
+- OpenAI AI Text Classifier
+- Copilot GPT Builder
+- OpenAI GPT-3 base models
+- OpenAI Assistants API
+
 ## Not Yet Implemented
 
-- Record data files
-- Record list page
-- Record detail page
 - Search and filtering
 - Event index pages
 - Category pages
 - Stats page
 - Methodology page
 - Submit/correction page
-- Seed records
+- Validation script
+- Larger seed dataset
 
 ## Next PR
 
-PR-002 should add:
+PR-003 should add:
 
-- Initial data schema files
-- Public enums for statuses, categories, entity types, event types, source types, reliability, and confidence
-- Initial reviewed seed records
-- Basic validation or data-loading helpers if appropriate
+- Improved record list UI
+- Record detail page polish
+- Status and confidence badge components
+- Timeline and evidence components
+- Basic empty-state and not-found handling
 
 ## Public-Safety Notes
 
