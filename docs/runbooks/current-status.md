@@ -6,9 +6,9 @@ AI Tools History Archive
 
 ## Current Phase
 
-PR-002: data schema and initial seed records.
+PR-003: records UI polish.
 
-## Completed in Previous Phase
+## Completed in Previous Phases
 
 - Repository initialized
 - Static-friendly Next.js setup added
@@ -21,15 +21,23 @@ PR-002: data schema and initial seed records.
 - UI guidelines added
 - Public roadmap added
 - Internal/private file patterns added to `.gitignore`
-
-## Completed in This Phase
-
 - Public enum definitions added
 - TypeScript data schema added
 - Initial reviewed seed records added
 - Basic record data loading helpers added
 - Basic records index page added
 - Basic record detail page added
+
+## Completed in This Phase
+
+- Record card component added
+- Status badge component added
+- Confidence badge component added
+- Event timeline component added
+- Evidence list component added
+- Records index page updated to use reusable components
+- Record detail page updated to show current state, facts, known unknowns, timeline, and evidence through reusable components
+- White-background UI polish added for record list and detail pages
 
 ## Initial Seed Records
 
@@ -52,13 +60,14 @@ PR-002: data schema and initial seed records.
 
 ## Next PR
 
-PR-003 should add:
+PR-004 should add:
 
-- Improved record list UI
-- Record detail page polish
-- Status and confidence badge components
-- Timeline and evidence components
-- Basic empty-state and not-found handling
+- Lightweight search for records
+- Status filter
+- Category filter
+- Entity type filter
+- URL query state if practical
+- Empty-state messaging for filtered results
 
 ## Public-Safety Notes
 
