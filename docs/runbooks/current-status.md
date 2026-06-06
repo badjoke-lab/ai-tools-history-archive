@@ -6,7 +6,7 @@ AI Tools History Archive
 
 ## Current Phase
 
-PR-006: category pages and basic stats.
+PR-007: methodology, glossary, submit, and about pages.
 
 ## Completed in Previous Phases
 
@@ -41,16 +41,18 @@ PR-006: category pages and basic stats.
 - Lifecycle event extraction helper added
 - Event list component added
 - Event index pages added
+- Category pages added
+- Stats page added
 
 ## Completed in This Phase
 
-- Category summary helper added
-- Archive stats helper added
-- Stat table component added
-- `/categories/` page added
-- `/categories/[category]/` pages added
-- `/stats/` page added
-- Category and stats page styling added
+- `/methodology/` page added
+- `/glossary/` page added
+- `/submit/` page added
+- `/about/` page added
+- Global navigation added to layout
+- Footer added to layout
+- Static page styling added
 
 ## Initial Seed Records
 
@@ -62,19 +64,21 @@ PR-006: category pages and basic stats.
 
 ## Not Yet Implemented
 
-- Methodology page
-- Submit/correction page
 - Validation script
 - Larger seed dataset
+- SEO polish
+- Sitemap and robots files
+- Structured data
 
 ## Next PR
 
-PR-007 should add:
+PR-008 should add:
 
-- Methodology page
-- Glossary page or glossary scaffold
-- Submit/correction page
-- About page polish if needed
+- SEO metadata polish
+- Sitemap
+- Robots file
+- Basic JSON-LD if practical
+- Release/readiness notes
 
 ## Public-Safety Notes
 
