@@ -6,7 +6,7 @@ AI Tools History Archive
 
 ## Current Phase
 
-PR-003: records UI polish.
+PR-004: records search and filters.
 
 ## Completed in Previous Phases
 
@@ -27,17 +27,23 @@ PR-003: records UI polish.
 - Basic record data loading helpers added
 - Basic records index page added
 - Basic record detail page added
-
-## Completed in This Phase
-
 - Record card component added
 - Status badge component added
 - Confidence badge component added
 - Event timeline component added
 - Evidence list component added
-- Records index page updated to use reusable components
-- Record detail page updated to show current state, facts, known unknowns, timeline, and evidence through reusable components
 - White-background UI polish added for record list and detail pages
+
+## Completed in This Phase
+
+- Lightweight record search added
+- Status filter added
+- Category filter added
+- Entity type filter added
+- Filter result summary added
+- Filtered empty-state messaging added
+- URL query state added for records search and filters
+- Mobile-friendly filter panel styling added
 
 ## Initial Seed Records
 
@@ -49,7 +55,6 @@ PR-003: records UI polish.
 
 ## Not Yet Implemented
 
-- Search and filtering
 - Event index pages
 - Category pages
 - Stats page
@@ -60,14 +65,14 @@ PR-003: records UI polish.
 
 ## Next PR
 
-PR-004 should add:
+PR-005 should add:
 
-- Lightweight search for records
-- Status filter
-- Category filter
-- Entity type filter
-- URL query state if practical
-- Empty-state messaging for filtered results
+- Event index page
+- Shutdowns page
+- Acquisitions page
+- Rebrands page
+- API / model deprecations page
+- Simple event filtering by event type and record status
 
 ## Public-Safety Notes
 
