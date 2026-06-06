@@ -216,6 +216,77 @@ h1 {
   font-size: 14px;
 }
 
+.filter-shell {
+  margin-top: 24px;
+}
+
+.filter-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(150px, 1fr)) auto;
+  gap: 10px;
+  align-items: end;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+  background: var(--soft);
+}
+
+.filter-field {
+  display: grid;
+  gap: 6px;
+}
+
+.filter-field span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 10px;
+  background: #ffffff;
+  color: var(--foreground);
+  font: inherit;
+}
+
+.clear-button {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 14px;
+  background: #ffffff;
+  color: var(--foreground);
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter-result-summary {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.empty-state {
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px;
+  background: #ffffff;
+}
+
+.empty-state h2 {
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
 .record-list {
   display: grid;
   gap: 12px;
@@ -358,6 +429,16 @@ h1 {
   font-size: 14px;
 }
 
+@media (max-width: 920px) {
+  .filter-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-field {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 760px) {
   .header-inner {
     align-items: flex-start;
@@ -370,7 +451,8 @@ h1 {
 
   .grid,
   .record-card,
-  .fact-list {
+  .fact-list,
+  .filter-panel {
     grid-template-columns: 1fr;
   }
 
