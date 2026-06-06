@@ -6,7 +6,7 @@ AI Tools History Archive
 
 ## Current Phase
 
-PR-005: lifecycle event index pages.
+PR-006: category pages and basic stats.
 
 ## Completed in Previous Phases
 
@@ -38,17 +38,19 @@ PR-005: lifecycle event index pages.
 - Category filter added
 - Entity type filter added
 - URL query state added for records search and filters
+- Lifecycle event extraction helper added
+- Event list component added
+- Event index pages added
 
 ## Completed in This Phase
 
-- Lifecycle event extraction helper added
-- Event list component added
-- `/events/` page added
-- `/shutdowns/` page added
-- `/acquisitions/` page added
-- `/rebrands/` page added
-- `/api-model-deprecations/` page added
-- Event navigation and white-background event card styling added
+- Category summary helper added
+- Archive stats helper added
+- Stat table component added
+- `/categories/` page added
+- `/categories/[category]/` pages added
+- `/stats/` page added
+- Category and stats page styling added
 
 ## Initial Seed Records
 
@@ -60,8 +62,6 @@ PR-005: lifecycle event index pages.
 
 ## Not Yet Implemented
 
-- Category pages
-- Stats page
 - Methodology page
 - Submit/correction page
 - Validation script
@@ -69,12 +69,12 @@ PR-005: lifecycle event index pages.
 
 ## Next PR
 
-PR-006 should add:
+PR-007 should add:
 
-- Category index page
-- Category detail pages
-- Basic stats page
-- Category and event count summaries
+- Methodology page
+- Glossary page or glossary scaffold
+- Submit/correction page
+- About page polish if needed
 
 ## Public-Safety Notes
 
