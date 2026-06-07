@@ -1,4 +1,4 @@
-import { RecordCard } from '@/components/RecordCard';
+import { RecordsExplorer } from '@/components/RecordsExplorer';
 import { getAllRecords, getRecordStats } from '@/lib/records';
 
 export default function RecordsPage() {
@@ -20,11 +20,7 @@ export default function RecordsPage() {
           <span>{stats.totalEvidence} evidence links</span>
         </div>
 
-        <div className="record-list">
-          {records.map((record) => (
-            <RecordCard record={record} key={record.id} />
-          ))}
-        </div>
+        <RecordsExplorer records={records} />
       </div>
     </main>
   );
