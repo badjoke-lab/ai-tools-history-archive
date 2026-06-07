@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Record } from '@/data/schema';
 import { RecordCard } from './RecordCard';
+import styles from './RecordFilters.module.css';
 
 type RecordFiltersProps = {
   records: Record[];
@@ -101,9 +102,9 @@ export function RecordFilters({ records }: RecordFiltersProps) {
   }
 
   return (
-    <section className="filter-shell" aria-label="Record search and filters">
-      <div className="filter-panel">
-        <label className="filter-field search-field">
+    <section className={styles.shell} aria-label="Record search and filters">
+      <div className={styles.panel}>
+        <label className={`${styles.field} ${styles.searchField}`}>
           <span>Search</span>
           <input
             type="search"
@@ -113,7 +114,7 @@ export function RecordFilters({ records }: RecordFiltersProps) {
           />
         </label>
 
-        <label className="filter-field">
+        <label className={styles.field}>
           <span>Status</span>
           <select value={status} onChange={(event) => setStatus(event.target.value)}>
             <option value={allValue}>All statuses</option>
@@ -123,7 +124,7 @@ export function RecordFilters({ records }: RecordFiltersProps) {
           </select>
         </label>
 
-        <label className="filter-field">
+        <label className={styles.field}>
           <span>Category</span>
           <select value={category} onChange={(event) => setCategory(event.target.value)}>
             <option value={allValue}>All categories</option>
@@ -133,7 +134,7 @@ export function RecordFilters({ records }: RecordFiltersProps) {
           </select>
         </label>
 
-        <label className="filter-field">
+        <label className={styles.field}>
           <span>Entity type</span>
           <select value={entityType} onChange={(event) => setEntityType(event.target.value)}>
             <option value={allValue}>All entity types</option>
@@ -143,12 +144,12 @@ export function RecordFilters({ records }: RecordFiltersProps) {
           </select>
         </label>
 
-        <button className="clear-button" type="button" onClick={clearFilters}>
+        <button className={styles.clearButton} type="button" onClick={clearFilters}>
           Clear
         </button>
       </div>
 
-      <div className="filter-result-summary">
+      <div className={styles.summary}>
         Showing {filteredRecords.length} of {records.length} records
       </div>
 
@@ -159,10 +160,10 @@ export function RecordFilters({ records }: RecordFiltersProps) {
           ))}
         </div>
       ) : (
-        <div className="empty-state">
+        <div className={styles.emptyState}>
           <h2>No records match these filters.</h2>
           <p>Try clearing the search text or selecting broader filters.</p>
-          <button className="clear-button" type="button" onClick={clearFilters}>
+          <button className={styles.clearButton} type="button" onClick={clearFilters}>
             Clear filters
           </button>
         </div>
