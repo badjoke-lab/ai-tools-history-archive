@@ -1,10 +1,33 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+const siteUrl = 'https://ai-tools-history-archive.pages.dev';
+
 export const metadata: Metadata = {
-  title: 'AI Tools History Archive',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'AI Tools History Archive',
+    template: '%s — AI Tools History Archive'
+  },
   description:
-    'A source-linked archive for AI tool shutdowns, acquisitions, rebrands, API deprecations, model retirements, feature removals, and major product changes.'
+    'A source-linked archive for AI tool shutdowns, acquisitions, rebrands, API deprecations, model retirements, feature removals, and major product changes.',
+  alternates: {
+    canonical: '/'
+  },
+  openGraph: {
+    title: 'AI Tools History Archive',
+    description:
+      'Track AI tool shutdowns, acquisitions, rebrands, API deprecations, model retirements, feature removals, and major product changes.',
+    url: '/',
+    siteName: 'AI Tools History Archive',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary',
+    title: 'AI Tools History Archive',
+    description:
+      'Source-linked lifecycle records for AI tools, services, products, APIs, models, and features.'
+  }
 };
 
 const navItems = [
