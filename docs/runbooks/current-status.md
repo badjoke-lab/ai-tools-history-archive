@@ -6,7 +6,7 @@ AI Tools History Archive
 
 ## Current Phase
 
-PR-005: lifecycle event index pages.
+PR-004: records search and filters.
 
 ## Completed in Previous Phases
 
@@ -27,28 +27,19 @@ PR-005: lifecycle event index pages.
 - Basic record data loading helpers added
 - Basic records index page added
 - Basic record detail page added
-- Record card component added
-- Status badge component added
-- Confidence badge component added
-- Event timeline component added
-- Evidence list component added
-- White-background UI polish added for record list and detail pages
-- Lightweight record search added
-- Status filter added
-- Category filter added
-- Entity type filter added
-- URL query state added for records search and filters
+- Record UI components added
+- Record list and detail UI polished
 
 ## Completed in This Phase
 
-- Lifecycle event extraction helper added
-- Event list component added
-- `/events/` page added
-- `/shutdowns/` page added
-- `/acquisitions/` page added
-- `/rebrands/` page added
-- `/api-model-deprecations/` page added
-- Event navigation and white-background event card styling added
+- RecordsExplorer component added
+- Lightweight client-side record search added
+- Status filter added
+- Category filter added
+- Entity type filter added
+- Filtered empty-state messaging added
+- Filter state is reflected in URL query parameters
+- Records page connected to RecordsExplorer
 
 ## Initial Seed Records
 
@@ -60,6 +51,7 @@ PR-005: lifecycle event index pages.
 
 ## Not Yet Implemented
 
+- Event index pages
 - Category pages
 - Stats page
 - Methodology page
@@ -69,12 +61,13 @@ PR-005: lifecycle event index pages.
 
 ## Next PR
 
-PR-006 should add:
+PR-005 should add event index pages:
 
-- Category index page
-- Category detail pages
-- Basic stats page
-- Category and event count summaries
+- `/events/`
+- `/shutdowns/`
+- `/acquisitions/`
+- `/rebrands/`
+- `/api-model-deprecations/`
 
 ## Public-Safety Notes
 
