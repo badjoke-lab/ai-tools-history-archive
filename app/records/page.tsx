@@ -1,4 +1,4 @@
-import { RecordsExplorer } from '@/components/RecordsExplorer';
+import { RecordFilters } from '@/components/RecordFilters';
 import { getAllRecords, getRecordStats } from '@/lib/records';
 
 export default function RecordsPage() {
@@ -11,7 +11,7 @@ export default function RecordsPage() {
         <p className="kicker">Public seed dataset</p>
         <h1>Records</h1>
         <p className="lede small">
-          Initial source-linked records for AI tools, services, products, APIs, models, features, and lifecycle events.
+          Search and filter the initial source-linked records for AI tools, services, products, APIs, models, features, and lifecycle events.
         </p>
 
         <div className="compact-stats" aria-label="Record summary">
@@ -20,7 +20,7 @@ export default function RecordsPage() {
           <span>{stats.totalEvidence} evidence links</span>
         </div>
 
-        <RecordsExplorer records={records} />
+        <RecordFilters records={records} />
       </div>
     </main>
   );
