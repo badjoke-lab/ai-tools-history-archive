@@ -28,10 +28,10 @@ function checkDuplicates(values, label) {
   }
 }
 
-const recordIds = collect(/id:\s*'(atha_(?!event_|evidence_)[^']+)'/g);
-const eventIds = collect(/id:\s*'(atha_event_[^']+)'/g);
-const evidenceIds = collect(/id:\s*'(atha_evidence_[^']+)'/g);
-const slugs = collect(/slug:\s*'([^']+)'/g);
+const recordIds = collect(/^\s{4}id:\s*'(atha_(?!event_|evidence_)[^']+)'/gm);
+const eventIds = collect(/^\s{8}id:\s*'(atha_event_[^']+)'/gm);
+const evidenceIds = collect(/^\s{8}id:\s*'(atha_evidence_[^']+)'/gm);
+const slugs = collect(/^\s{4}slug:\s*'([^']+)'/gm);
 const recordIdRefs = collect(/record_id:\s*'(atha_(?!event_|evidence_)[^']+)'/g);
 const eventIdRefs = collect(/event_id:\s*'(atha_event_[^']+)'/g);
 const urls = collect(/url:\s*'([^']+)'/g);
@@ -92,6 +92,10 @@ for (const date of lastReviewedDates) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     report(`last_reviewed_at must use YYYY-MM-DD: ${date}`);
   }
+}
+
+if (recordIds.length !== slugs.length) {
+  report(`Record ID count (${recordIds.length}) does not match slug count (${slugs.length}).`);
 }
 
 if (errors.length > 0) {
