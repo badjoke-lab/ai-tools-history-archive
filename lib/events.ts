@@ -1,5 +1,5 @@
 import type { LifecycleEvent, Record } from '@/data/schema';
-import { records } from '@/data/records';
+import { getAllRecords } from '@/lib/records';
 
 export type EventWithRecord = LifecycleEvent & {
   record: Pick<Record, 'id' | 'slug' | 'name' | 'operator' | 'status' | 'entity_type' | 'category' | 'confidence'>;
@@ -8,7 +8,7 @@ export type EventWithRecord = LifecycleEvent & {
 const descendingByDate = (a: EventWithRecord, b: EventWithRecord) => b.date.localeCompare(a.date);
 
 export function getAllEvents(): EventWithRecord[] {
-  return records
+  return getAllRecords()
     .flatMap((record) =>
       record.events.map((event) => ({
         ...event,
