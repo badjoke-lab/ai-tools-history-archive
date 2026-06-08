@@ -89,12 +89,25 @@ h1 { margin: 0; max-width: 860px; font-size: clamp(36px, 6.2vw, 68px); line-heig
 .event-card p + .event-record-link { display: inline-block; margin-top: 12px; }
 .event-card-side, .record-card-side { align-content: start; justify-content: flex-end; row-gap: 8px; }
 .record-card-heading { align-items: center; margin-bottom: 10px; }
-.record-title, .event-record-link, .evidence-list a { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.record-title, .event-record-link, .evidence-list a, .source-line a, .related-record-list a { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
 .record-title { font-size: 18px; letter-spacing: -0.02em; }
 .record-latest-event { margin-top: 10px !important; }
 .detail-header { padding: 20px 0; }
+.evidence-detail-header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, auto); gap: 24px; align-items: start; }
+.detail-lede { margin-top: 16px; }
+.detail-status-stack { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
 .detail-card { min-height: unset; }
 .current-state-card { background: var(--soft); }
+.source-line { margin-top: 14px !important; font-size: 14px; overflow-wrap: anywhere; }
+.detail-two-column { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); gap: 14px; }
+.evidence-summary-card { background: #fbfbfb; }
+.evidence-summary-card h2 { margin: 0 0 10px; font-size: 20px; letter-spacing: -0.03em; }
+.evidence-button { margin-top: 16px; }
+.compact-heading-row { margin-bottom: 14px; }
+.compact-facts { margin-top: 0; }
+.warning-card { background: var(--warning); }
+.correction-card { background: #fafafa; }
+.related-record-list { display: flex; flex-wrap: wrap; gap: 10px 16px; }
 .back-link { color: var(--muted); font-size: 14px; }
 .fact-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 20px 0 0; }
 .fact-list div { border-top: 1px solid var(--line); padding-top: 10px; }
@@ -108,9 +121,9 @@ h1 { margin: 0; max-width: 860px; font-size: clamp(36px, 6.2vw, 68px); line-heig
 .footer { margin-top: 48px; border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 14px; }
 
 @media (max-width: 980px) {
-  .home-hero-grid, .home-event-row, .event-registry-row { grid-template-columns: 1fr; }
+  .home-hero-grid, .home-event-row, .event-registry-row, .detail-two-column, .evidence-detail-header { grid-template-columns: 1fr; }
   .quick-link-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .registry-meta-cell { justify-content: flex-start; }
+  .registry-meta-cell, .detail-status-stack { justify-content: flex-start; }
 }
 @media (max-width: 920px) { .filter-panel, .grid, .category-grid, .stats-grid { grid-template-columns: 1fr 1fr; } .search-field { grid-column: 1 / -1; } }
 @media (max-width: 760px) { .header-inner { align-items: flex-start; flex-direction: column; } .hero, .home-hero { padding: 42px 0 30px; } .section-heading-row { align-items: flex-start; flex-direction: column; } .quick-link-grid, .grid, .category-grid, .stats-grid, .registry-row, .record-card, .event-card, .fact-list, .filter-panel { grid-template-columns: 1fr; } .record-card-side, .event-card-side { justify-content: flex-start; } .home-event-row { gap: 10px; } }
