@@ -8,6 +8,10 @@ type EventListProps = {
   emptyBody?: string;
 };
 
+function displayValue(value: string) {
+  return value.replaceAll('_', ' ');
+}
+
 export function EventList({
   events,
   emptyTitle = 'No events found.',
@@ -23,20 +27,20 @@ export function EventList({
   }
 
   return (
-    <div className="event-list">
+    <div className="registry-list event-registry-list">
       {events.map((event) => (
-        <article className="event-card" key={event.id}>
-          <div className="event-card-main">
-            <p className="event-date">{event.date}</p>
+        <article className="registry-row event-registry-row" key={event.id}>
+          <div className="registry-date">{event.date}</div>
+          <div className="registry-main-cell">
             <h2>{event.title}</h2>
             <p>{event.description}</p>
             <a className="event-record-link" href={`/records/${event.record.slug}/`}>
-              View record: {event.record.name}
+              {event.record.name}
             </a>
           </div>
-          <div className="event-card-side">
-            <span className="mini-label">{event.type}</span>
-            <span className="mini-label">{event.record.entity_type}</span>
+          <div className="registry-meta-cell">
+            <span className="mini-label">{displayValue(event.type)}</span>
+            <span className="mini-label">{displayValue(event.record.entity_type)}</span>
             <StatusBadge label={event.record.status} tone={getStatusTone(event.record.status)} />
             <ConfidenceBadge confidence={event.confidence} />
           </div>
