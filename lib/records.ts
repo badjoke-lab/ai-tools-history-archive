@@ -1,4 +1,7 @@
-import { records } from '@/data/records';
+import { records as records01 } from '@/data/records';
+import { records02 } from '@/data/records-02';
+
+const records = [...records01, ...records02];
 
 export function getAllRecords() {
   return records;
