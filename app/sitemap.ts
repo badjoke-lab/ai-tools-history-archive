@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
-import { records } from '@/data/records';
 import { categories } from '@/data/enums';
+import { getAllRecords } from '@/lib/records';
 
 const siteUrl = 'https://ai-tools-history-archive.pages.dev';
 
@@ -21,6 +21,7 @@ const staticRoutes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const records = getAllRecords();
   const staticEntries = staticRoutes.map((route) => ({
     url: `${siteUrl}/${route ? `${route}/` : ''}`,
     changeFrequency: 'weekly' as const,
