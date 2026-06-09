@@ -1,11 +1,49 @@
+import type { Metadata } from 'next';
 import { ConfidenceBadge } from '@/components/ConfidenceBadge';
 import { EventTimeline } from '@/components/EventTimeline';
 import { EvidenceList } from '@/components/EvidenceList';
 import { getStatusTone, StatusBadge } from '@/components/StatusBadge';
 import { getAllRecords, getRecordBySlug } from '@/lib/records';
 
+const siteUrl = 'https://ai-tools-history-archive.pages.dev';
+
 export function generateStaticParams() {
   return getAllRecords().map((record) => ({ slug: record.slug }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const record = getRecordBySlug(params.slug);
+
+  if (!record) {
+    return {
+      title: 'Record not found',
+      robots: { index: false, follow: false }
+    };
+  }
+
+  const title = `${record.name} history, status, and lifecycle events`;
+  const description = `${record.summary} Current status: ${displayValue(record.status)}. Source-linked timeline and evidence.`;
+  const canonicalPath = `/records/${record.slug}/`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: canonicalPath
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalPath,
+      type: 'article',
+      siteName: 'AI Tools History Archive'
+    },
+    twitter: {
+      card: 'summary',
+      title,
+      description
+    }
+  };
 }
 
 function displayValue(value: string) {
@@ -31,9 +69,35 @@ export default function RecordDetailPage({ params }: { params: { slug: string } 
   const relatedRecords = record.related_records
     .map((slug) => getRecordBySlug(slug))
     .filter(Boolean);
+  const canonicalUrl = `${siteUrl}/records/${record.slug}/`;
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `${record.name} lifecycle history`,
+    description: record.summary,
+    url: canonicalUrl,
+    dateModified: record.last_reviewed_at,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'AI Tools History Archive',
+      url: siteUrl
+    },
+    mainEntity: {
+      '@type': 'Thing',
+      name: record.name,
+      alternateName: record.aliases,
+      description: record.current_state,
+      sameAs: record.last_known_url ? [record.last_known_url] : undefined
+    },
+    citation: record.evidence.map((item) => item.url)
+  };
 
   return (
     <main className="section record-detail-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <div className="container detail-layout">
         <a className="back-link" href="/records/">← Records</a>
 
