@@ -46,7 +46,8 @@ export const records: Record[] = [
       }
     ],
     related_records: [],
-    last_reviewed_at: '2026-06-05'
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This seed record tracks the Bard-to-Gemini brand transition; Gemini is not yet modeled as a separate related record.']
   },
   {
     id: 'atha_000002',
@@ -93,7 +94,8 @@ export const records: Record[] = [
       }
     ],
     related_records: [],
-    last_reviewed_at: '2026-06-05'
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This record tracks the public availability change; later AI-detection research or products are not yet modeled as related records.']
   },
   {
     id: 'atha_000003',
@@ -139,7 +141,8 @@ export const records: Record[] = [
       }
     ],
     related_records: [],
-    last_reviewed_at: '2026-06-05'
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This seed record tracks GPT Builder retirement only; broader Microsoft Copilot feature lifecycle records are not yet modeled.']
   },
   {
     id: 'atha_000004',
@@ -184,8 +187,9 @@ export const records: Record[] = [
         reliability: 'high'
       }
     ],
-    related_records: [],
-    last_reviewed_at: '2026-06-05'
+    related_records: ['openai-assistants-api'],
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This aggregate seed record groups several legacy model names; future expansion may split model families into more granular records.']
   },
   {
     id: 'atha_000005',
@@ -229,8 +233,8 @@ export const records: Record[] = [
         reliability: 'high'
       }
     ],
-    related_records: [],
-    last_reviewed_at: '2026-06-05',
+    related_records: ['openai-gpt-3-base-models'],
+    last_reviewed_at: '2026-06-11',
     known_unknowns: ['Exact retirement timing depends on OpenAI’s final sunset announcement.']
   },
   {
@@ -276,8 +280,9 @@ export const records: Record[] = [
         reliability: 'high'
       }
     ],
-    related_records: [],
-    last_reviewed_at: '2026-06-08'
+    related_records: ['anthropic-claude-2-and-sonnet-3-models'],
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This aggregate seed record groups several Claude 1 and Instant model variants; future expansion may split model variants into separate records.']
   },
   {
     id: 'atha_000007',
@@ -323,7 +328,8 @@ export const records: Record[] = [
       }
     ],
     related_records: ['anthropic-claude-1-and-instant-models'],
-    last_reviewed_at: '2026-06-08'
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This aggregate seed record groups several Claude 2 and Sonnet 3 model variants; future expansion may split model variants into separate records.']
   },
   {
     id: 'atha_000008',
@@ -368,8 +374,9 @@ export const records: Record[] = [
         reliability: 'high'
       }
     ],
-    related_records: [],
-    last_reviewed_at: '2026-06-08'
+    related_records: ['google-text-embedding-004', 'google-imagen-3-generate-002'],
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This aggregate seed record groups multiple Gemini 2.0 Flash model entries listed on the same deprecations source.']
   },
   {
     id: 'atha_000009',
@@ -414,8 +421,9 @@ export const records: Record[] = [
         reliability: 'high'
       }
     ],
-    related_records: ['google-gemini-2-0-flash-models'],
-    last_reviewed_at: '2026-06-08'
+    related_records: ['google-gemini-2-0-flash-models', 'google-imagen-3-generate-002'],
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This record tracks the Gemini API lifecycle entry only; broader embedding model family history is not yet modeled.']
   },
   {
     id: 'atha_000010',
@@ -460,7 +468,8 @@ export const records: Record[] = [
         reliability: 'high'
       }
     ],
-    related_records: ['google-text-embedding-004'],
-    last_reviewed_at: '2026-06-08'
+    related_records: ['google-gemini-2-0-flash-models', 'google-text-embedding-004'],
+    last_reviewed_at: '2026-06-11',
+    known_unknowns: ['This record tracks the Gemini API model lifecycle entry, not the full product history of Imagen releases outside the deprecations table.']
   }
 ];
