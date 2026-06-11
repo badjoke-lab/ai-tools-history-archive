@@ -1,5 +1,25 @@
+import type { Metadata } from 'next';
 import { RecordFilters } from '@/components/RecordFilters';
 import { getAllRecords, getRecordStats } from '@/lib/records';
+
+export const metadata: Metadata = {
+  title: 'AI tools, services, APIs, and model lifecycle records',
+  description:
+    'Search source-linked records for AI tool shutdowns, rebrands, acquisitions, API deprecations, model retirements, feature removals, and other product lifecycle changes.',
+  alternates: { canonical: '/records/' },
+  openGraph: {
+    title: 'AI lifecycle records',
+    description:
+      'Browse source-linked histories for AI tools, services, APIs, models, products, and features.',
+    url: '/records/',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary',
+    title: 'AI lifecycle records',
+    description: 'Search source-linked histories for AI tools, services, APIs, models, products, and features.'
+  }
+};
 
 export default function RecordsPage() {
   const records = getAllRecords();
@@ -8,10 +28,10 @@ export default function RecordsPage() {
   return (
     <main className="section records-page">
       <div className="container">
-        <p className="kicker">Public seed dataset</p>
-        <h1>Records</h1>
+        <p className="kicker">Source-linked registry</p>
+        <h1>AI lifecycle records</h1>
         <p className="lede small">
-          Search and filter the initial source-linked records for AI tools, services, products, APIs, models, features, and lifecycle events.
+          Search and filter AI tools, services, products, APIs, models, companies, hardware, and features by status, entity type, operator, and lifecycle history.
         </p>
 
         <div className="compact-stats" aria-label="Record summary">

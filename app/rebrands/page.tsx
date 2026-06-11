@@ -1,5 +1,24 @@
+import type { Metadata } from 'next';
 import { EventList } from '@/components/EventList';
 import { getEventsByTypes } from '@/lib/events';
+
+export const metadata: Metadata = {
+  title: 'AI product rebrands and name changes',
+  description:
+    'Browse source-linked rebrands, renames, and product identity transitions across AI tools, services, products, APIs, models, and platforms.',
+  alternates: { canonical: '/rebrands/' },
+  openGraph: {
+    title: 'AI product rebrands and name changes',
+    description: 'A source-linked index of AI product renames, rebrands, and identity transitions.',
+    url: '/rebrands/',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary',
+    title: 'AI product rebrands and name changes',
+    description: 'A source-linked index of AI product renames, rebrands, and identity transitions.'
+  }
+};
 
 export default function RebrandsPage() {
   const events = getEventsByTypes(['rebrand', 'merger']);
@@ -7,15 +26,15 @@ export default function RebrandsPage() {
   return (
     <main className="section events-page">
       <div className="container">
-        <p className="kicker">Rebrand and transition lifecycle events</p>
-        <h1>Rebrands</h1>
+        <p className="kicker">Identity and product transition events</p>
+        <h1>AI product rebrands</h1>
         <p className="lede small">
-          Rebrand and product transition events in the current public seed dataset.
+          Browse dated rebrands and related identity transitions with the affected entity, prior and current state, and supporting public evidence.
         </p>
         <EventList
           events={events}
           emptyTitle="No rebrand events found."
-          emptyBody="No rebrand or product transition events are included in the current seed dataset."
+          emptyBody="No rebrand or product transition events are included in the current public dataset."
         />
       </div>
     </main>
