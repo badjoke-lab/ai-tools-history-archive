@@ -2,8 +2,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const recordsPath = path.join(root, 'data', 'records.ts');
-const source = fs.readFileSync(recordsPath, 'utf8');
+const dataDir = path.join(root, 'data');
+const recordFiles = fs
+  .readdirSync(dataDir)
+  .filter((file) => /^records(?:-\d+)?\.ts$/.test(file))
+  .sort();
+
+const source = recordFiles
+  .map((file) => fs.readFileSync(path.join(dataDir, file), 'utf8'))
+  .join('\n');
 const errors = [];
 
 function collect(regex) {
@@ -38,6 +45,7 @@ const urls = collect(/url:\s*'([^']+)'/g);
 const lastReviewedDates = collect(/last_reviewed_at:\s*'([^']+)'/g);
 const eventEvidenceBlocks = collect(/evidence_ids:\s*\[([^\]]*)\]/g);
 
+if (recordFiles.length === 0) report('No record files found.');
 if (recordIds.length === 0) report('No record IDs found.');
 if (eventIds.length === 0) report('No event IDs found.');
 if (evidenceIds.length === 0) report('No evidence IDs found.');
@@ -104,4 +112,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`Data validation passed: ${recordIds.length} records, ${eventIds.length} events, ${evidenceIds.length} evidence links.`);
+console.log(`Data validation passed: ${recordIds.length} records, ${eventIds.length} events, ${evidenceIds.length} evidence links across ${recordFiles.length} files.`);
