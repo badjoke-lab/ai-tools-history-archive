@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "generate:machine": "node scripts/generate-machine-records.mjs",
+    "build": "npm run generate:machine && next build",
     "start": "next start",
     "lint": "next lint",
     "validate:data": "node scripts/validate-data.mjs",
-    "check": "npm run validate:data && npm run build"
+    "validate:machine": "node scripts/validate-machine-records.mjs",
+    "check": "npm run validate:data && npm run generate:machine && npm run validate:machine && next build"
   },
   "dependencies": {
     "next": "14.2.16",
