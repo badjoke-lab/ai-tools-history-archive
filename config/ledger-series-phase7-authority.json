@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "project": "AI Tools History Archive",
+  "repository": "badjoke-lab/ai-tools-history-archive",
+  "authority": "LEDGER_SERIES_PHASE7",
+  "status": "active_after_merge",
+  "activation_base_sha": "d888d0982f29efe8f220e3c0076e97c542cc3c09",
+  "goal": "Strengthen the existing AI lifecycle archive from source-linked product history into a deterministic lifecycle registry that follows shutdown, deprecation and major change through export, migration, replacement or successor outcomes where evidence supports them.",
+  "required_references": [
+    "docs/roadmap.md",
+    "docs/ai-era-registry-spec.md",
+    "docs/ai-era-execution-schedule.md",
+    "data/schema.ts",
+    "data/enums.ts",
+    "docs/source-policy.md",
+    "docs/content-policy.md"
+  ],
+  "stages": [
+    "1-gap-audit",
+    "2-schema-decision-gate",
+    "3-record-level-json",
+    "4-structured-filters",
+    "5-compare",
+    "6-stats",
+    "7-reviewed-lifecycle-and-production-verification",
+    "8-closeout"
+  ],
+  "safety": {
+    "preserve_existing_model_by_default": true,
+    "canonical_mutation_requires_reviewed_pr": true,
+    "unreviewed_candidate_auto_publish": false,
+    "ai_generated_canonical_history": false,
+    "subjective_ranking": false,
+    "chatbot_first_surface": false,
+    "unknown_values_remain_unknown": true,
+    "future_shutdown_dates_are_not_completion_evidence": true
+  },
+  "implementation_rule": "Audit current main first and reuse existing record detail, event/category indexes, basic search, and basic Stats. Implement only verified gaps. Schema changes require the Stage 2 representative-record decision. Each runtime stage requires repository checks green, merge, and production verification where public output changes.",
+  "automatic_continuation_after_stage8": false
+}
