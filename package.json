@@ -10,7 +10,8 @@
     "lint": "next lint",
     "validate:data": "node scripts/validate-data.mjs",
     "validate:machine": "node scripts/validate-machine-records.mjs",
-    "check": "npm run validate:data && npm run generate:machine && npm run validate:machine && next build"
+    "validate:phase7-filters": "node scripts/validate-phase7-filters.mjs",
+    "check": "npm run validate:data && npm run generate:machine && npm run validate:machine && npm run validate:phase7-filters && next build"
   },
   "dependencies": {
     "next": "14.2.16",
