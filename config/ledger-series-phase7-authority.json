@@ -3,8 +3,10 @@
   "project": "AI Tools History Archive",
   "repository": "badjoke-lab/ai-tools-history-archive",
   "authority": "LEDGER_SERIES_PHASE7",
-  "status": "active_after_merge",
+  "status": "complete",
   "activation_base_sha": "d888d0982f29efe8f220e3c0076e97c542cc3c09",
+  "completed_at": "2026-08-19",
+  "accepted_production_sha": "5ce5d0efbfbf9d643b68b81fc1106577c54d5a27",
   "goal": "Strengthen the existing AI lifecycle archive from source-linked product history into a deterministic lifecycle registry that follows shutdown, deprecation and major change through export, migration, replacement or successor outcomes where evidence supports them.",
   "required_references": [
     "docs/roadmap.md",
@@ -25,6 +27,30 @@
     "7-reviewed-lifecycle-and-production-verification",
     "8-closeout"
   ],
+  "completed_stages": [
+    "1-gap-audit",
+    "2-schema-decision-gate",
+    "3-record-level-json",
+    "4-structured-filters",
+    "5-compare",
+    "6-stats",
+    "7-reviewed-lifecycle-and-production-verification",
+    "8-closeout"
+  ],
+  "production_evidence": {
+    "implementation_floor_sha": "1850af25d16e842915506b38d568baa45b3eb202",
+    "production_sha": "5ce5d0efbfbf9d643b68b81fc1106577c54d5a27",
+    "workflow_run_id": 32206782477,
+    "job_id": 95931464975,
+    "artifact_id": 9349470926,
+    "status_context": "atha-phase7-production",
+    "status": "success",
+    "record_counts": {
+      "records": 10,
+      "events": 11,
+      "evidence": 12
+    }
+  },
   "safety": {
     "preserve_existing_model_by_default": true,
     "canonical_mutation_requires_reviewed_pr": true,
@@ -36,5 +62,9 @@
     "future_shutdown_dates_are_not_completion_evidence": true
   },
   "implementation_rule": "Audit current main first and reuse existing record detail, event/category indexes, basic search, and basic Stats. Implement only verified gaps. Schema changes require the Stage 2 representative-record decision. Each runtime stage requires repository checks green, merge, and production verification where public output changes.",
+  "remaining_vertical_follow_up": [
+    "Recheck OpenAI Assistants API on or after 2026-08-26 before treating the announced shutdown as completed.",
+    "Continue reviewed record/evidence growth and ordinary lifecycle corrections under normal repository policy."
+  ],
   "automatic_continuation_after_stage8": false
 }
