@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const script = readFileSync('scripts/check-phase7-production.mjs', 'utf8');
 const workflow = readFileSync('.github/workflows/phase7-production.yml', 'utf8');
+const nextConfig = readFileSync('next.config.mjs', 'utf8');
 const errors = [];
 const requireText = (source, text, label) => {
   if (!source.includes(text)) errors.push(`${label}: missing ${text}`);
@@ -32,6 +33,9 @@ for (const marker of [
   'actions/upload-artifact@v4',
   'cancel-in-progress: true'
 ]) requireText(workflow, marker, 'production workflow');
+
+requireText(nextConfig, "await import('./scripts/generate-machine-records.mjs')", 'Next build hook');
+requireText(nextConfig, "output: 'export'", 'Next build hook');
 
 if (errors.length) {
   console.error(`Phase 7 production-verifier contract failed with ${errors.length} error(s):`);
