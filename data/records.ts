@@ -197,11 +197,12 @@ export const records: Record[] = [
     operator: 'OpenAI',
     country: 'United States',
     status: 'deprecated',
-    current_state: 'OpenAI indicates that the Assistants API will be sunset after the Responses API reaches full feature parity, with a target sunset in the first half of 2026.',
+    current_state: 'OpenAI has deprecated the Assistants API and states that it will shut down on August 26, 2026; existing integrations should migrate to the Responses API.',
     launched_at: '2023',
-    last_known_url: 'https://developers.openai.com/api/docs/deprecations',
+    ended_at: '2026-08-26',
+    last_known_url: 'https://platform.openai.com/docs/assistants/deep-dive',
     current_url_status: 'live_verified',
-    summary: 'The Assistants API is tracked as an API lifecycle record because OpenAI has announced a planned sunset path toward the newer Responses API.',
+    summary: 'The Assistants API is a deprecated OpenAI API scheduled to shut down on August 26, 2026, with the Responses API documented as the migration path.',
     confidence: 'high',
     events: [
       {
@@ -212,6 +213,16 @@ export const records: Record[] = [
         title: 'Assistants API sunset path announced',
         description: 'OpenAI documented a sunset path for the Assistants API after feature parity with the Responses API, with a target sunset in the first half of 2026.',
         evidence_ids: ['atha_evidence_000005'],
+        confidence: 'high'
+      },
+      {
+        id: 'atha_event_000011',
+        record_id: 'atha_000005',
+        date: '2025-08-26',
+        type: 'shutdown_notice',
+        title: 'Assistants API shutdown date set for August 26, 2026',
+        description: 'OpenAI formally deprecated the Assistants API after Responses API feature parity and set August 26, 2026 as the shutdown date, with migration guidance to the Responses API.',
+        evidence_ids: ['atha_evidence_000011', 'atha_evidence_000012'],
         confidence: 'high'
       }
     ],
@@ -227,11 +238,35 @@ export const records: Record[] = [
         accessed_at: '2026-06-05',
         supports: ['api_deprecated', 'sunset_path', 'current_state'],
         reliability: 'high'
+      },
+      {
+        id: 'atha_evidence_000011',
+        record_id: 'atha_000005',
+        event_id: 'atha_event_000011',
+        title: 'Assistants API deep dive',
+        url: 'https://platform.openai.com/docs/assistants/deep-dive',
+        source_type: 'official_docs',
+        publisher: 'OpenAI',
+        accessed_at: '2026-08-19',
+        supports: ['api_deprecated', 'shutdown_notice', 'replacement_guidance', 'current_state'],
+        reliability: 'high'
+      },
+      {
+        id: 'atha_evidence_000012',
+        record_id: 'atha_000005',
+        event_id: 'atha_event_000011',
+        title: 'Assistants API (v2) FAQ',
+        url: 'https://help.openai.com/en/articles/8550641-assistants-api',
+        source_type: 'official_support',
+        publisher: 'OpenAI',
+        accessed_at: '2026-08-19',
+        supports: ['api_deprecated', 'shutdown_notice', 'replacement_guidance', 'current_state'],
+        reliability: 'high'
       }
     ],
     related_records: [],
-    last_reviewed_at: '2026-06-05',
-    known_unknowns: ['Exact retirement timing depends on OpenAI’s final sunset announcement.']
+    last_reviewed_at: '2026-08-19',
+    known_unknowns: ['Shutdown is scheduled for August 26, 2026; final removal should be rechecked after that date.']
   },
   {
     id: 'atha_000006',
