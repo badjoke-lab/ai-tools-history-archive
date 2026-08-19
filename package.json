@@ -13,7 +13,8 @@
     "validate:phase7-filters": "node scripts/validate-phase7-filters.mjs",
     "validate:phase7-compare": "node scripts/validate-phase7-compare.mjs",
     "validate:phase7-stats": "node scripts/validate-phase7-stats.mjs",
-    "check": "npm run validate:data && npm run generate:machine && npm run validate:machine && npm run validate:phase7-filters && npm run validate:phase7-compare && npm run validate:phase7-stats && next build"
+    "validate:phase7-production-verifier": "node --check scripts/check-phase7-production.mjs && node scripts/validate-phase7-production-verifier.mjs",
+    "check": "npm run validate:data && npm run generate:machine && npm run validate:machine && npm run validate:phase7-filters && npm run validate:phase7-compare && npm run validate:phase7-stats && npm run validate:phase7-production-verifier && next build"
   },
   "dependencies": {
     "next": "14.2.16",
