@@ -7,6 +7,7 @@ const siteUrl = 'https://ai-tools-history-archive.pages.dev';
 const staticRoutes = [
   '',
   'records',
+  'compare',
   'events',
   'shutdowns',
   'acquisitions',
