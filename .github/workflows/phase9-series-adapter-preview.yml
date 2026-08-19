@@ -1,0 +1,46 @@
+name: Phase 9 Series Adapter Preview Verification
+
+on:
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'next.config.mjs'
+      - 'scripts/generate-series-adapter.mjs'
+      - 'scripts/validate-series-adapter.mjs'
+      - 'scripts/check-series-origin.mjs'
+      - '.github/workflows/phase9-series-adapter-preview.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase9-series-adapter-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-preview:
+    if: github.head_ref == 'agent/phase9-series-adapter'
+    runs-on: ubuntu-latest
+    env:
+      SERIES_ORIGIN: https://agent-phase9-series-adapter.ai-tools-history-archive.pages.dev
+      # 5166a576 is the latest runtime-affecting commit already confirmed by the Cloudflare bot.
+      # Later commits in this PR only refine the read-only verifier/workflow and need not force a new runtime deployment.
+      SERIES_EXPECTED_COMMIT: 5166a57693f01e82e0dc294663e8bb49a77728ba
+      SERIES_VERIFY_ATTEMPTS: 20
+      SERIES_VERIFY_INTERVAL_MS: 15000
+      GITHUB_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --progress=false
+      - name: Generate native and Series machine layers locally
+        run: npm run generate:machine
+      - name: Validate local Series adapter
+        run: npm run validate:series
+      - name: Verify complete Series adapter on Cloudflare preview
+        run: node scripts/check-series-origin.mjs

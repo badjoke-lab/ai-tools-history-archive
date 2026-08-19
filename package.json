@@ -4,17 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "generate:machine": "node scripts/generate-machine-records.mjs",
-    "build": "npm run generate:machine && next build",
+    "generate:native-machine": "node scripts/generate-machine-records.mjs",
+    "generate:series": "node scripts/generate-series-adapter.mjs",
+    "generate:machine": "npm run generate:native-machine && npm run generate:series",
+    "build": "npm run generate:machine && npm run validate:machine && npm run validate:series && next build",
     "start": "next start",
     "lint": "next lint",
     "validate:data": "node scripts/validate-data.mjs",
     "validate:machine": "node scripts/validate-machine-records.mjs",
+    "validate:series": "node scripts/validate-series-adapter.mjs",
     "validate:phase7-filters": "node scripts/validate-phase7-filters.mjs",
     "validate:phase7-compare": "node scripts/validate-phase7-compare.mjs",
     "validate:phase7-stats": "node scripts/validate-phase7-stats.mjs",
     "validate:phase7-production-verifier": "node --check scripts/check-phase7-production.mjs && node scripts/validate-phase7-production-verifier.mjs",
-    "check": "npm run validate:data && npm run generate:machine && npm run validate:machine && npm run validate:phase7-filters && npm run validate:phase7-compare && npm run validate:phase7-stats && npm run validate:phase7-production-verifier && next build"
+    "check": "npm run validate:data && npm run generate:machine && npm run validate:machine && npm run validate:series && npm run validate:phase7-filters && npm run validate:phase7-compare && npm run validate:phase7-stats && npm run validate:phase7-production-verifier && next build"
   },
   "dependencies": {
     "next": "14.2.16",
