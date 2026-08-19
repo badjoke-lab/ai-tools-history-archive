@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "project": "AI Tools History Archive",
+  "phase": "Ledger Series Phase 7",
+  "status": "complete",
+  "closed_at": "2026-08-19",
+  "activation_base_sha": "d888d0982f29efe8f220e3c0076e97c542cc3c09",
+  "accepted_production_sha": "5ce5d0efbfbf9d643b68b81fc1106577c54d5a27",
+  "completed_capabilities": [
+    "current-main gap audit and stale PR cleanup",
+    "no-schema-expansion decision gate for deterministic lifecycle projections",
+    "canonical per-record JSON with manifest/version/llms/ai discovery",
+    "provider/year/lifecycle/provenance structured filters",
+    "bounded 2-4 record historical Compare with shareable state",
+    "canonical lifecycle/provenance Stats plus /data/stats.json",
+    "reviewed lifecycle follow-up with current first-party evidence",
+    "Compare sitemap discovery",
+    "fail-closed reviewed production verification",
+    "Cloudflare direct-Next-build machine-generation hook"
+  ],
+  "production_evidence": {
+    "origin": "https://ai-tools-history-archive.pages.dev",
+    "implementation_floor_sha": "1850af25d16e842915506b38d568baa45b3eb202",
+    "production_sha": "5ce5d0efbfbf9d643b68b81fc1106577c54d5a27",
+    "workflow_run_id": 32206782477,
+    "job_id": 95931464975,
+    "artifact_id": 9349470926,
+    "status_context": "atha-phase7-production",
+    "status": "success",
+    "counts": {
+      "records": 10,
+      "events": 11,
+      "evidence": 12
+    },
+    "verified_surfaces": [
+      "/version.json",
+      "/data/manifest.json",
+      "/data/stats.json",
+      "/data/records/openai-assistants-api.json",
+      "/records/",
+      "/compare/",
+      "/stats/",
+      "/sitemap.xml"
+    ]
+  },
+  "resolved_production_issue": {
+    "failed_run_id": 32206148137,
+    "failed_artifact_id": 9349278191,
+    "failure": "/version.json returned HTTP 404 because machine files could be skipped when Cloudflare invoked Next build directly",
+    "resolution_pr": 41,
+    "resolution": "generate the canonical machine-readable layer from next.config.mjs before static export so both package-script and direct Next build paths publish the same files"
+  },
+  "canonical_delta_in_phase7_follow_up": {
+    "records_changed": 1,
+    "new_events": 1,
+    "new_evidence": 2,
+    "schema_changes": 0,
+    "taxonomy_changes": 0
+  },
+  "safety_outcomes": {
+    "rankings_added": false,
+    "recommendations_added": false,
+    "ai_generated_canonical_history_added": false,
+    "unreviewed_candidate_auto_publish_added": false,
+    "generic_related_records_reinterpreted_as_successors": false,
+    "future_shutdown_marked_complete": false
+  },
+  "remaining_vertical_follow_up": [
+    "OpenAI Assistants API shutdown boundary must be rechecked on or after 2026-08-26.",
+    "Normal reviewed record/evidence growth and corrections continue outside the finite horizontal phase."
+  ],
+  "automatic_horizontal_continuation": false
+}
