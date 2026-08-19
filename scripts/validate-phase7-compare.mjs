@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 const component = readFileSync('components/CompareRecords.tsx', 'utf8');
 const page = readFileSync('app/compare/page.tsx', 'utf8');
 const layout = readFileSync('app/layout.tsx', 'utf8');
+const sitemap = readFileSync('app/sitemap.ts', 'utf8');
 const fail = (message) => { throw new Error(message); };
 
 for (const marker of [
@@ -26,6 +27,7 @@ for (const marker of ['Compare AI lifecycle records', '2–4 canonical records',
   if (!page.includes(marker)) fail(`Compare page missing marker: ${marker}`);
 }
 if (!layout.includes("['Compare', '/compare/']")) fail('Primary navigation does not expose Compare');
+if (!sitemap.includes("'compare'")) fail('Sitemap does not expose Compare');
 
 if (component.includes('score') || component.includes('ranking') || component.includes('recommendation')) {
   fail('Compare component must not introduce scoring/ranking/recommendation logic');
