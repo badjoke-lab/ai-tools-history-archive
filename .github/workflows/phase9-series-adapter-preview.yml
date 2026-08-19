@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'package.json'
+      - 'next.config.mjs'
       - 'scripts/generate-series-adapter.mjs'
       - 'scripts/validate-series-adapter.mjs'
       - 'scripts/check-series-origin.mjs'
@@ -22,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SERIES_ORIGIN: https://agent-phase9-series-adapter.ai-tools-history-archive.pages.dev
+      SERIES_EXPECTED_COMMIT: ${{ github.event.pull_request.head.sha }}
       SERIES_VERIFY_ATTEMPTS: 20
       SERIES_VERIFY_INTERVAL_MS: 15000
       GITHUB_SHA: ${{ github.event.pull_request.head.sha }}
