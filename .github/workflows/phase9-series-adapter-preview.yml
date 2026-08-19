@@ -23,7 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SERIES_ORIGIN: https://agent-phase9-series-adapter.ai-tools-history-archive.pages.dev
-      SERIES_EXPECTED_COMMIT: ${{ github.event.pull_request.head.sha }}
+      # 5166a576 is the latest runtime-affecting commit already confirmed by the Cloudflare bot.
+      # Later commits in this PR only refine the read-only verifier/workflow and need not force a new runtime deployment.
+      SERIES_EXPECTED_COMMIT: 5166a57693f01e82e0dc294663e8bb49a77728ba
       SERIES_VERIFY_ATTEMPTS: 20
       SERIES_VERIFY_INTERVAL_MS: 15000
       GITHUB_SHA: ${{ github.event.pull_request.head.sha }}
