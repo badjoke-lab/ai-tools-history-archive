@@ -34,6 +34,7 @@ const navItems = [
   ['Records', '/records/'],
   ['Events', '/events/'],
   ['Categories', '/categories/'],
+  ['Compare', '/compare/'],
   ['Stats', '/stats/'],
   ['Methodology', '/methodology/'],
   ['Submit', '/submit/'],
