@@ -20,13 +20,15 @@ function lifespanBucket(launchYear: string | null, endYear: string | null) {
   return '6+ calendar years';
 }
 
+type LifespanBucket = Exclude<ReturnType<typeof lifespanBucket>, null>;
+
 export function getArchiveStats() {
   const events = getAllEvents();
   const evidence = records.flatMap((record) => record.evidence);
   const projections = records.map((record) => ({ record, projection: getLifecycleProjection(record) }));
   const lifespanBuckets = projections
     .map(({ projection }) => lifespanBucket(projection.launchYear, projection.endYear))
-    .filter((value): value is string => Boolean(value));
+    .filter((value): value is LifespanBucket => value !== null);
 
   return {
     totals: {
