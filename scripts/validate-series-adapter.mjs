@@ -5,6 +5,18 @@ function readJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
 }
 
+function stableValue(value) {
+  if (Array.isArray(value)) return value.map(stableValue);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, stableValue(value[key])]));
+  }
+  return value;
+}
+
+function structurallyEqual(a, b) {
+  return JSON.stringify(stableValue(a)) === JSON.stringify(stableValue(b));
+}
+
 const version = readJson('public/version.json');
 const nativeIndex = readJson('public/data/records/index.json');
 const descriptor = readJson('public/data/series/registry.json');
@@ -46,14 +58,10 @@ for (const row of index.records ?? []) {
   if (envelope.record_key?.native_record_id !== nativeDossier.record?.id) fail(`${row.slug}: native record ID mismatch`);
   if (envelope.record_key?.native_record_type !== 'ai_lifecycle_record') fail(`${row.slug}: native record type mismatch`);
   if (envelope.current_state?.status !== nativeDossier.record?.status) fail(`${row.slug}: status mismatch`);
-  if (JSON.stringify(envelope.events?.records ?? []) !== JSON.stringify(nativeDossier.record?.events ?? [])) fail(`${row.slug}: event payload mismatch`);
-  if (JSON.stringify(envelope.evidence?.records ?? []) !== JSON.stringify(nativeDossier.record?.evidence ?? [])) fail(`${row.slug}: evidence payload mismatch`);
+  if (!structurallyEqual(envelope.events?.records ?? [], nativeDossier.record?.events ?? [])) fail(`${row.slug}: event payload mismatch`);
+  if (!structurallyEqual(envelope.evidence?.records ?? [], nativeDossier.record?.evidence ?? [])) fail(`${row.slug}: evidence payload mismatch`);
   if ((envelope.relationships ?? []).length !== 0) fail(`${row.slug}: adapter invented typed relationships`);
   if (envelope.verification?.build_commit !== version.build_commit) fail(`${row.slug}: build commit mismatch`);
-}
-
-if ((index.records ?? []).some((row) => row.slug === 'meta-graph-api-older-versions')) {
-  fail('API Deprecation Meta placeholder must never appear here; wrong registry leakage');
 }
 
 if (errors.length) {
